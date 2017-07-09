@@ -10,15 +10,12 @@ describe('Game', () => {
 
   it('Place dots', () => {
     // when
-    const game = createGame({
-      width: 2,
-      height: 2,
-      dots: [
-        [0, 0], [1, 1],
-      ],
-    });
+    const game = createGame({ width: 2, height: 2 });
+    game.placeDots([
+      [0, 0], [1, 1],
+    ]);
 
-    // when / then
+    // then
     expect(game.stringify()).toEqual([
       '. ',
       ' .',
