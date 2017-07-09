@@ -2,6 +2,8 @@
   "extends": "airbnb-base",
   "rules": {
     "no-undef": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "no-return-assign": "off",
+    "arrow-body-style": "off"
   }
 }

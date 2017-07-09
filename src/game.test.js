@@ -1,16 +1,27 @@
-import { create } from './game';
+import { createGame } from './game';
 
 describe('Game', () => {
-  it('Unique cell', () => {
-    expect(create({ width: 1, height: 1 }).asStrings()).toEqual([
-      ' ',
+  it('Create Game', () => {
+    expect(createGame({ width: 3, height: 2 }).stringify()).toEqual([
+      '   ',
+      '   ',
     ]);
   });
 
-  it('Empty', () => {
-    expect(create({ width: 3, height: 2 }).asStrings()).toEqual([
-      '   ',
-      '   ',
+  it('Place dots', () => {
+    // when
+    const game = createGame({
+      width: 2,
+      height: 2,
+      dots: [
+        [0, 0], [1, 1],
+      ],
+    });
+
+    // when / then
+    expect(game.stringify()).toEqual([
+      '. ',
+      ' .',
     ]);
   });
 });
